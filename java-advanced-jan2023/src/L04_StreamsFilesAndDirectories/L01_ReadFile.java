@@ -1,7 +1,6 @@
-package L03_StreamsFilesAndDirectories;
+package L04_StreamsFilesAndDirectories;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 

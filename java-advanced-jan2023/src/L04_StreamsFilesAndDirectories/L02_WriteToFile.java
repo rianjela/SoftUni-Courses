@@ -1,4 +1,4 @@
-package L03_StreamsFilesAndDirectories;
+package L04_StreamsFilesAndDirectories;
 
 import java.io.*;
 import java.util.Arrays;
