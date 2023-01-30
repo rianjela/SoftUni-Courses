@@ -2,7 +2,7 @@ package E05_FunctionalProgramming;
 
 import java.util.Scanner;
 
-public class E08_CustomComparator {
+public class E08_CustomComparator_TODO {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         // Function <приема, връща> -> apply
