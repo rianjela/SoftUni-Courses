@@ -13,4 +13,9 @@ public class Department {
         this.employees = new ArrayList<>();
     }
 
+    public List<Employee> getEmployees() {
+        return employees;
+    }
+
+
 }
