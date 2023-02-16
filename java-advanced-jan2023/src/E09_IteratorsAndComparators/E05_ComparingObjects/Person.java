@@ -1,0 +1,53 @@
+package E09_IteratorsAndComparators.E05_ComparingObjects;
+
+public class Person implements Comparable<Person> {
+
+    private String name;
+    private int age;
+    private String town;
+
+
+    public Person(String input) {
+        String[] personData = input.split("\\s+");
+        this.name = personData[0];
+        this.age = Integer.parseInt(personData[1]);
+        this.town = personData[2];
+    }
+
+    @Override
+    public int compareTo(Person person) {
+       int n = this.name.compareTo(person.getName());
+       if (n==0){
+           n = Integer.compare(this.age, person.getAge());
+           if (n==0){
+               n = this.town.compareTo(person.getTown());
+           }
+       }
+
+        return n;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public String getTown() {
+        return town;
+    }
+
+    public void setTown(String town) {
+        this.town = town;
+    }
+}

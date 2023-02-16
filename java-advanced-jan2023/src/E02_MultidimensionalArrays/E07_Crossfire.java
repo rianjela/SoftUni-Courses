@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
-public class E07_Crossfire_70of100 {
+public class E07_Crossfire {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -16,7 +16,7 @@ public class E07_Crossfire_70of100 {
         int cols = matrixData[1];
 
         List<List<Integer>> matrix = new ArrayList<>();
-        fillMatrix(matrix, cols, rows);
+        fillMatrix(matrix, rows, cols);
 
 
         String[] nukeData = scanner.nextLine().split("\\s+");
@@ -27,8 +27,8 @@ public class E07_Crossfire_70of100 {
             int nukeRadius = Integer.parseInt(nukeData[2]);
 
             //destroy vertical
-            for (int currentRow = nukeRow - nukeRadius; currentRow < nukeRow + nukeRadius; currentRow++) {
-                if (isInMatrix(currentRow, nukeCol, matrix)) {
+            for (int currentRow = nukeRow - nukeRadius; currentRow <= nukeRow + nukeRadius; currentRow++) {
+                if (isInMatrix(currentRow, nukeCol, matrix) && currentRow != nukeRow) {
                     matrix.get(currentRow).remove(nukeCol);
                 }
             }
@@ -62,7 +62,7 @@ public class E07_Crossfire_70of100 {
 
 
     // fill the matrix
-    private static void fillMatrix(List<List<Integer>> matrix, int cols, int rows) {
+    private static void fillMatrix(List<List<Integer>> matrix, int rows, int cols) {
         int number = 1;
         for (int row = 0; row < rows; row++) {
             matrix.add(new ArrayList<>());
